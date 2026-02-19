@@ -4,7 +4,7 @@
 // Ex.: const MUSIC_FILE = "musica.mp3";
 // Se não quiser música, deixe "".
 // ==============================
-const MUSIC_FILE = ""; // ex: "musica.mp3"
+const MUSIC_FILE = "musica.mp3"; // ex: "musica.mp3"
 
 // Util
 const $ = (s) => document.querySelector(s);
@@ -32,11 +32,9 @@ $("#fecharCarta").addEventListener("click", () => modalCarta.close());
 
 // Outra surpresa (só troca texto)
 const frases = [
-  "Você é meu pedacinho de paz 💗",
-  "Seu sorriso melhora meu dia inteiro 😊",
-  "Que hoje seja doce igual você 🍰",
-  "Você é raridade boa ✨",
-  "Te amo mais que ontem e menos que amanhã ♾️"
+  "Você é meu amor 💗",
+  "Seu sorriso melhora meu dia",
+  "Obrigado por sempre estar ao meu lado,
 ];
 $("#btnOutro").addEventListener("click", () => {
   const el = $("#textoSurpresa");
