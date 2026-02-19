@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feliz Aniversário, Valentina! 💖</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- 🌹 Pétalas caindo (sem partículas por clique/mouse) -->
+  <canvas id="petals"></canvas>
+
+  <header class="topbar">
+    <div class="badge">🎂 Aniversário</div>
+
+    <!-- Botão de música (opcional) -->
+    <button id="musicBtn" class="pill" aria-pressed="false" title="Ligar/desligar música">
+      🎵 Música: OFF
+    </button>
+  </header>
+
+  <main class="wrap">
+    <section class="card hero">
+      <div class="glow" aria-hidden="true"></div>
+
+      <h1 class="title">
+        <span class="script">Feliz aniversário,</span>
+        <span class="name" id="nome">Valentina</span> 💕
+      </h1>
+
+      <!-- ✍️ EDITE AQUI -->
+      <p class="subtitle" id="subtitulo">
+        Hoje é o seu dia meu amor, e eu fiz esse cantinho só pra te lembrar o quanto você é incrível pra mim. 💘
+      </p>
+
+      <div class="actions">
+        <button class="btn primary" id="btnSurpresa">Abrir surpresa 🎁</button>
+        <button class="btn ghost" id="btnCarta">Ler cartinha 💌</button>
+      </div>
+
+      <div class="chips">
+        <span class="chip">❤️ Romântico</span>
+        <span class="chip">🌹 Vermelho do amor</span>
+        <span class="chip">💗 Feito com carinho</span>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card mini">
+        <h2>3 motivos pra te celebrar 🎉</h2>
+
+        <!-- ✍️ EDITE AQUI -->
+        <ul id="listaMotivos">
+          <li>Você tem um jeito de deixar tudo mais leve </li>
+          <li>Seu sorriso muda meu dia </li>
+          <li>Você é meu lugar favorito </li>
+        </ul>
+      </article>
+
+      <article class="card mini">
+        <h2>Uma mensagem rapidinha 💬</h2>
+
+        <!-- ✍️ EDITE AQUI -->
+        <p id="msgCurta">
+          Que seu novo ano venha com paz, saúde e sonhos se realizando. Eu tô com você. Sempre. ❤️
+        </p>
+
+        <div class="meter">
+          <div class="meter-bar" id="amorBar"></div>
+        </div>
+        <small class="hint">Nível de amor: <strong id="amorTxt">infinito</strong> ♾️</small>
+      </article>
+    </section>
+
+    <!-- ===== GALERIA (com moldura + legenda + tela cheia) ===== -->
+    <section class="card gallery" id="galeria">
+      <h2>Galeria de Momentos 📸</h2>
+
+      <!-- ✍️ EDITE AQUI -->
+      <p class="hint">
+        Clique em uma foto pra ver em tela cheia 💌
+      </p>
+
+      <div class="love-grid">
+        <!-- ✍️ EDITE AQUI: arquivos e legendas -->
+        <figure class="love-photo" data-full="foto1.jpg" data-caption="Meu lugar favorito é onde você está ❤️">
+          <img src="foto1.jpg" alt="Foto 1">
+          <figcaption>Meu lugar favorito é onde você está ❤️</figcaption>
+        </figure>
+
+        <figure class="love-photo" data-full="foto2.jpg" data-caption="A gente junto combina demais 😽💞">
+          <img src="foto2.jpg" alt="Foto 2">
+          <figcaption>A gente junto combina demais 😽💞</figcaption>
+        </figure>
+
+        <figure class="love-photo" data-full="foto3.jpg" data-caption="Eu te escolho todo dia, de novo 💘">
+          <img src="foto3.jpg" alt="Foto 3">
+          <figcaption>Eu te escolho todo dia, de novo 💘</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <!-- ✍️ EDITE AQUI -->
+      <p>Feito com muito amor por <strong id="assinatura">Rodrigo</strong> 💘</p>
+    </footer>
+  </main>
+
+  <!-- ===== MODAIS ===== -->
+
+  <!-- Surpresa -->
+  <dialog class="modal" id="modalSurpresa">
+    <div class="modal-inner">
+      <button class="x" id="fecharSurpresa" aria-label="Fechar">✕</button>
+      <h3>Surpresa pra você 🎁</h3>
+
+      <!-- ✍️ EDITE AQUI -->
+      <p id="textoSurpresa">
+        Hoje você ganha: 1 abraço demorado 🤗 + vários beijos 😘 + a certeza de que eu te amo muito 💖
+      </p>
+
+      <div class="gifters">
+        <button class="btn small ghost" id="btnOutro">Outra surpresa ✨</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Carta -->
+  <dialog class="modal" id="modalCarta">
+    <div class="modal-inner">
+      <button class="x" id="fecharCarta" aria-label="Fechar">✕</button>
+      <h3>Uma cartinha 💌</h3>
+
+      <!-- ✍️ EDITE AQUI -->
+      <p class="letter" id="carta">
+        Amor, hoje eu só quero te lembrar que você é uma das melhores partes da minha vida.
+        Obrigado por existir do jeitinho que existe e de sempre estar ao meu lado
+        Que esse novo ciclo te traga paz, saúde, motivos pra sorrir e sonhos se realizando.
+        Eu tô aqui por você. Feliz aniversário aniversário meu amooooooooor 💖
+      </p>
+
+      <div class="sign">
+        <span>Com amor,</span>
+        <strong id="assinaturaCarta">Rodrigo</strong>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Lightbox (tela cheia) -->
+  <dialog class="modal" id="lightbox">
+    <div class="modal-inner lightbox-inner">
+      <button class="x" id="lbClose" aria-label="Fechar">✕</button>
+      <img id="lbImg" alt="Foto em tela cheia">
+      <p id="lbCaption" class="lb-caption"></p>
+    </div>
+  </dialog>
+
+  <!-- Música opcional -->
+  <audio id="music" preload="auto" loop></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
